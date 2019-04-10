@@ -6,10 +6,17 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp3
 {
-    class Program
+    class JournalEntry
     {
-        static void Main(string[] args)
+        public JournalEntry(string note, int dist)
         {
+            villageName = note; distanceTraveled = dist;
+            HowFarToGetBack = distanceTraveled;
         }
+        public int HowFarToGetBack = 0;
+        private string villageName;
+        private int distanceTraveled;
+        public int getDistanceWalked() { return distanceTraveled; }
+        public string getVillageName() { return villageName; }
     }
 }
