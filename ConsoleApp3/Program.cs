@@ -138,4 +138,25 @@ public void Announcement()
         Console.WriteLine(e.Message);
     }
 }
+class Village
+{
+    // http://www.vikinganswerlady.com/measurement.shtml
+
+    public Village(string _villageName, bool _isAHere)
+    {
+        isAstrildgeHere = _isAHere;
+        VillageName = _villageName;
+    }
+    public void VillageSetup(int _prevVillageDist, Village _westVillage, Village _eastVillage)
+    {
+        east = _eastVillage;
+        west = _westVillage;
+        distanceFromPreviousVillage = _prevVillageDist;
+    }
+
+    public Village west;
+    public Village east;
+    public string VillageName;
+    public int distanceFromPreviousVillage;
+    public bool isAstrildgeHere;
 }
