@@ -42,3 +42,52 @@ class Hugi
         return DistanceWalked;
     }
 }
+
+
+class CountrySide
+{
+
+    /* 
+    * 
+    */
+    static void Main()
+    {
+        CountrySide c = new CountrySide();
+        c.Run();
+    }
+
+    // Create the LinkedList to reflect the Map in the PowerPoint Instructions
+    Village Maeland;
+    Village Helmholtz;
+    Village Alst;
+    Village Wessig;
+    Village Badden;
+    Village Uster;
+    Village Schvenig;
+
+    public void TraverseVillages(Village CurrentVillage)
+    {
+        if (Hugi.FoundAstrilde) return;
+
+
+        Hugi.HugiJournal.Add(new JournalEntry(CurrentVillage.VillageName, CurrentVillage.distanceFromPreviousVillage));
+        try
+        {
+            Console.WriteLine("I am in {0}", CurrentVillage.VillageName);
+
+            if (CurrentVillage.isAstrildgeHere)
+            {
+                Console.WriteLine("I found Dear Astrildge in {0}", CurrentVillage.VillageName);
+                Console.WriteLine("**** FEELING HAPPY!!! ******");
+                Console.WriteLine("Astrilde, I walked {0} vika to find you. Will you marry me?", Hugi.CalculateDistanceWalked());
+                Hugi.FoundAstrilde = true;
+            }
+
+            TraverseVillages(CurrentVillage.west);
+            TraverseVillages(CurrentVillage.east);
+
+
+        }
+        catch (NullReferenceException) { }
+    }
+}
