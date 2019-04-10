@@ -114,7 +114,7 @@ public void Run()
 }
 public void Announcement()
 {
-    string filename = "U:/Users/730263/a.txt";
+    string filename = "U:/Users/730507/aa.txt";
     try
     {
         // Create an instance of StreamReader to read from a file.
