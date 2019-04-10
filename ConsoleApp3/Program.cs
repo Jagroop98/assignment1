@@ -91,3 +91,24 @@ class CountrySide
         catch (NullReferenceException) { }
     }
 }
+public void Run()
+{
+    Alst = new Village("Alst", false);
+    Schvenig = new Village("Schvenig", false);
+    Wessig = new Village("Wessig", false);
+    Maeland = new Village("Maeland", false);
+    Helmholtz = new Village("helmholtz", false);
+    Uster = new Village("Uster", true);
+    Badden = new Village("Badden", false);
+
+    Alst.VillageSetup(0, Schvenig, Wessig);
+    Schvenig.VillageSetup(14, Maeland, Helmholtz);
+    Maeland.VillageSetup(9, null, Helmholtz);
+    Helmholtz.VillageSetup(28, null, null);
+    Wessig.VillageSetup(19, Uster, Badden);
+    Uster.VillageSetup(28, null, null);
+    Badden.VillageSetup(11, null, null);
+
+    this.TraverseVillages(Alst);
+    this.Announcement();
+}
